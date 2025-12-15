@@ -1,0 +1,26 @@
+{
+  "" : {
+    "const-values" : "/Users/tytydraco-rive/Documents/Projects/afsck/afsck/ios/pre/build/demo.build/Release-iphoneos/demo.build/Objects-normal/arm64/demo-primary.swiftconstvalues",
+    "dependencies" : "/Users/tytydraco-rive/Documents/Projects/afsck/afsck/ios/pre/build/demo.build/Release-iphoneos/demo.build/Objects-normal/arm64/demo-primary.d",
+    "diagnostics" : "/Users/tytydraco-rive/Documents/Projects/afsck/afsck/ios/pre/build/demo.build/Release-iphoneos/demo.build/Objects-normal/arm64/demo-primary.dia",
+    "emit-module-dependencies" : "/Users/tytydraco-rive/Documents/Projects/afsck/afsck/ios/pre/build/demo.build/Release-iphoneos/demo.build/Objects-normal/arm64/demo-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/tytydraco-rive/Documents/Projects/afsck/afsck/ios/pre/build/demo.build/Release-iphoneos/demo.build/Objects-normal/arm64/demo-primary-emit-module.dia",
+    "pch" : "/Users/tytydraco-rive/Documents/Projects/afsck/afsck/ios/pre/build/demo.build/Release-iphoneos/demo.build/Objects-normal/arm64/demo-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/tytydraco-rive/Documents/Projects/afsck/afsck/ios/pre/build/demo.build/Release-iphoneos/demo.build/Objects-normal/arm64/demo-primary.swiftdeps"
+  },
+  "/Users/tytydraco-rive/Documents/Projects/afsck/afsck/ios/pre/build/demo.build/Release-iphoneos/demo.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "index-unit-output-path" : "/demo.build/Release-iphoneos/demo.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/tytydraco-rive/Documents/Projects/afsck/afsck/ios/pre/build/demo.build/Release-iphoneos/demo.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/tytydraco-rive/Documents/Projects/afsck/afsck/ios/pre/build/demo.build/Release-iphoneos/demo.build/Objects-normal/arm64/GeneratedAssetSymbols.o"
+  },
+  "/Users/tytydraco-rive/Documents/Projects/afsck/afsck/ios/pre/demo/ContentView.swift" : {
+    "index-unit-output-path" : "/demo.build/Release-iphoneos/demo.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/tytydraco-rive/Documents/Projects/afsck/afsck/ios/pre/build/demo.build/Release-iphoneos/demo.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/tytydraco-rive/Documents/Projects/afsck/afsck/ios/pre/build/demo.build/Release-iphoneos/demo.build/Objects-normal/arm64/ContentView.o"
+  },
+  "/Users/tytydraco-rive/Documents/Projects/afsck/afsck/ios/pre/demo/demoApp.swift" : {
+    "index-unit-output-path" : "/demo.build/Release-iphoneos/demo.build/Objects-normal/arm64/demoApp.o",
+    "llvm-bc" : "/Users/tytydraco-rive/Documents/Projects/afsck/afsck/ios/pre/build/demo.build/Release-iphoneos/demo.build/Objects-normal/arm64/demoApp.bc",
+    "object" : "/Users/tytydraco-rive/Documents/Projects/afsck/afsck/ios/pre/build/demo.build/Release-iphoneos/demo.build/Objects-normal/arm64/demoApp.o"
+  }
+}
