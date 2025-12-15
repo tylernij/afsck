@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
+SCRIPT_DIR="$(dirname "$(realpath "$0")")"
+
 getsize() {
-    local script_dir="$(dirname "$0")"
-    local pre_app="$script_dir/pre"
-    local post_app="$script_dir/post"
+    local pre_app="$SCRIPT_DIR/pre"
+    local post_app="$SCRIPT_DIR/post"
 
     local pre_size=$(du -sk "$pre_app" | cut -f1)
     local post_size=$(du -sk "$post_app" | cut -f1)

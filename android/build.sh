@@ -1,15 +1,16 @@
 #!/usr/bin/env bash
 
+SCRIPT_DIR="$(dirname "$(realpath "$0")")"
+
 build() {
-    cd "$(dirname "$0")/$1" || exit 1
+    cd "$SCRIPT_DIR/$1" || exit 1
     ./gradlew clean assembleRelease
-    cd ..
+    cd "$SCRIPT_DIR"
 }
 
 getsize() {
-    local script_dir="$(dirname "$0")"
-    local pre_apk="$script_dir/pre/app/build/outputs/apk/release/app-release-unsigned.apk"
-    local post_apk="$script_dir/post/app/build/outputs/apk/release/app-release-unsigned.apk"
+    local pre_apk="$SCRIPT_DIR/pre/app/build/outputs/apk/release/app-release-unsigned.apk"
+    local post_apk="$SCRIPT_DIR/post/app/build/outputs/apk/release/app-release-unsigned.apk"
 
     local pre_size=$(stat -f%z "$pre_apk" 2>/dev/null || stat -c%s "$pre_apk" 2>/dev/null)
     local post_size=$(stat -f%z "$post_apk" 2>/dev/null || stat -c%s "$post_apk" 2>/dev/null)
