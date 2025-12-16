@@ -4,14 +4,7 @@ SCRIPT_DIR="$(dirname "$(realpath "$BASH_SOURCE")")"
 
 build() {
     cd "$SCRIPT_DIR/$1" || exit 1
-    xcodebuild archive \
-        -project demo.xcodeproj \
-        -scheme demo \
-        -configuration Release \
-        -archivePath build/demo.xcarchive \
-        CODE_SIGN_IDENTITY="" \
-        CODE_SIGNING_REQUIRED=NO \
-        CODE_SIGNING_ALLOWED=NO
+    build_ios
     cd "$SCRIPT_DIR"
 }
 

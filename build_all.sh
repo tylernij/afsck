@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
 ROOT_DIR="$(dirname "$(realpath "$BASH_SOURCE")")"
+SCRIPTS_DIR="$ROOT_DIR/scripts"
+
+source "$SCRIPTS_DIR/build_android.sh"
+source "$SCRIPTS_DIR/build_ios.sh"
 
 runtimes=(android ios web web-lite react react-native)
 
