@@ -18,6 +18,8 @@ source "$SCRIPTS_DIR/build_ios.sh"
 source "$SCRIPTS_DIR/compare_size.sh"
 
 runtimes=(android ios web web-lite react)
+multiplatform_runtimes=(react-native flutter)
+
 build_runtime() {
     local runtime_dir="$ROOT_DIR/runtimes/$1"
     source "$runtime_dir/build.sh"
@@ -30,7 +32,6 @@ build_runtime() {
     cleanup
 }
 
-multiplatform_runtimes=(react-native flutter)
 build_multiplatform_runtime() {
     local runtime_dir="$ROOT_DIR/runtimes/$1"
     source "$runtime_dir/build.sh"
@@ -52,12 +53,16 @@ cleanup() {
     unset SCRIPT_DIR
 }
 
-for runtime in "${runtimes[@]}"; do
-    echo "======== Building $runtime ========"
-    build_runtime $runtime
-done
+main() {
+    for runtime in "${runtimes[@]}"; do
+        echo "======== Building $runtime ========"
+        build_runtime $runtime
+    done
 
-for runtime in "${multiplatform_runtimes[@]}"; do
-    echo "======== Building $runtime ========"
-    build_multiplatform_runtime $runtime
-done
+    for runtime in "${multiplatform_runtimes[@]}"; do
+        echo "======== Building $runtime ========"
+        build_multiplatform_runtime $runtime
+    done
+}
+
+main
