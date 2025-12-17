@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+CSV_DATA="runtime,platform,pre_kb,post_kb,diff_kb"
+
+record_size() {
+    local runtime="$1"
+    local platform="$2"
+    CSV_DATA+=$'\n'"$runtime,$platform,$PRE_SIZE,$POST_SIZE,$SIZE_DIFF"
+}
+
+write_output_file() {
+    echo "$CSV_DATA" > "$ROOT_DIR/afsck_results.csv"
+}

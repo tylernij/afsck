@@ -16,7 +16,9 @@ fi
 source "$SCRIPTS_DIR/build_android.sh"
 source "$SCRIPTS_DIR/build_ios.sh"
 source "$SCRIPTS_DIR/compare_size.sh"
+source "$SCRIPTS_DIR/output_file.sh"
 
+# Runtime build information.
 runtimes=(android ios web web-lite react)
 multiplatform_runtimes=(react-native flutter)
 
@@ -28,6 +30,7 @@ build_runtime() {
     getsize
 
     echo "$1: Pre=$PRE_SIZE, Post=$POST_SIZE, Diff=$SIZE_DIFF"
+    record_size "$1" "$1"
 
     cleanup
 }
@@ -40,9 +43,11 @@ build_multiplatform_runtime() {
 
     getsize_ios
     echo "iOS $1: Pre=$PRE_SIZE, Post=$POST_SIZE, Diff=$SIZE_DIFF"
+    record_size "$1" "ios"
 
     getsize_android
     echo "Android $1: Pre=$PRE_SIZE, Post=$POST_SIZE, Diff=$SIZE_DIFF"
+    record_size "$1" "android"
 
     cleanup
 }
@@ -63,6 +68,8 @@ main() {
         echo "======== Building $runtime ========"
         build_multiplatform_runtime $runtime
     done
+
+    write_output_file
 }
 
 main
