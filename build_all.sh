@@ -46,7 +46,7 @@ build_multiplatform_runtime() {
 }
 
 cleanup() {
-    unset -f build getsize
+    unset -f build getsize getsize_ios getsize_android
     unset PRE_SIZE POST_SIZE SIZE_DIFF
     unset SCRIPT_DIR
 }
