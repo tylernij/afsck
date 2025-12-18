@@ -6,9 +6,7 @@ plugins {
 
 android {
     namespace = "com.rive.demo"
-    compileSdk {
-        version = release(36)
-    }
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.rive.demo"
@@ -42,7 +40,12 @@ android {
 }
 
 dependencies {
-    implementation(libs.rive.android)
+    // Use local AAR built from source
+    implementation(files("libs/rive-android.aar"))
+    // Rive's transitive dependencies
+    implementation("androidx.startup:startup-runtime:1.1.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+    
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
