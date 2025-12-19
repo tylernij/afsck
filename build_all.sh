@@ -17,6 +17,7 @@ source "$SCRIPTS_DIR/build_android.sh"
 source "$SCRIPTS_DIR/build_ios.sh"
 source "$SCRIPTS_DIR/compare_size.sh"
 source "$SCRIPTS_DIR/output_file.sh"
+source "$SCRIPTS_DIR/submodules.sh"
 
 # Runtime build information.
 runtimes=(android ios web web-lite react)
@@ -59,6 +60,9 @@ cleanup() {
 }
 
 main() {
+    echo "======== Updating submodules ========"
+    update_submodules
+
     for runtime in "${runtimes[@]}"; do
         echo "======== Building $runtime ========"
         build_runtime $runtime
