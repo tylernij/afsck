@@ -2,35 +2,36 @@
 
 SCRIPT_DIR="$(dirname "$(realpath "$BASH_SOURCE")")"
 
+# Build the rive-react-native dependencies.
 build_rive_react_native() {
-    cd "$SCRIPT_DIR/../../rive-react-native" || exit 1
+    pushd "$SCRIPT_DIR/../../rive-react-native" > /dev/null || exit 1
     rm -rf node_modules lib
     yarn install
     yarn prepare
-    cd "$SCRIPT_DIR"
+    popd > /dev/null
 }
 
 build() {
-    # Build rive-react-native first for post
-    if [ "$1" = "post" ]; then
+    # Build rive-react-native first for post.
+    if [[ "$1" == "post" ]]; then
         build_rive_react_native
     fi
 
-    cd "$SCRIPT_DIR/$1" || exit 1
+    pushd "$SCRIPT_DIR/$1" > /dev/null || exit 1
     rm -rf node_modules dist
     rm -rf android ios
     npm install
     EXPO_NO_GIT_STATUS=1 npx expo prebuild --clean
     
-    cd ios
+    pushd ios > /dev/null || exit 1
     build_ios
-    cd ..
+    popd > /dev/null
 
-    cd android
+    pushd android > /dev/null || exit 1
     build_android
-    cd ..
+    popd > /dev/null
 
-    cd "$SCRIPT_DIR"
+    popd > /dev/null
 }
 
 getsize_ios() {
