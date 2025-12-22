@@ -6,9 +6,7 @@ build() {
     cd "$SCRIPT_DIR/$1" || exit 1
     
     flutter clean
-    
-    # Skip Git LFS downloads for git dependencies (test assets not needed)
-    GIT_LFS_SKIP_SMUDGE=1 flutter pub get
+    flutter pub get
 
     flutter build ios --no-codesign
     flutter build apk
