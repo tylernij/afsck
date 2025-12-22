@@ -3,10 +3,6 @@
 ROOT_DIR="$(dirname "$(realpath "$BASH_SOURCE")")"
 SCRIPTS_DIR="$ROOT_DIR/scripts"
 
-# Temporary: set the ANDROID_HOME environment variable.
-ANDROID_HOME="$HOME/Library/Android/sdk"
-export ANDROID_HOME
-
 if [ -z "$ANDROID_HOME" ]; then
     echo "ANDROID_HOME must be set to the path to the Android SDK!"
     exit 1
